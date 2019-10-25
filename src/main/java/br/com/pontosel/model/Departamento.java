@@ -1,4 +1,4 @@
-package br.com.secrel.model;
+package br.com.pontosel.model;
 
 import java.util.ArrayList;
 import java.util.List;

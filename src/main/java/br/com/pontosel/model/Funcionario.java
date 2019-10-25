@@ -1,20 +1,45 @@
-package br.com.secrel.model;
+package br.com.pontosel.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Funcionario {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Funcionario implements Serializable{
+
+	
+	private static final long serialVersionUID = 5270682864264378277L;
+	
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)	
 	private Long id;
+	
+	
 	private Date dataNascimento;
+	
 	private String nome;
+	
+	@Column(unique = true, name = "cpf", nullable = true, length = 13 )
 	private Long cpf;
+	
 	private Long matricula;
+	
 	private Long telefone;
+	
 	private String senha;
+	
 	private Integer coFuncionario;
+	
 	private Date admissao;
 	
+	@OneToOne
 	private Cargo cargo;
+	
 	private Endereco endereco;
 	
 	public Funcionario() {
@@ -122,12 +147,6 @@ public class Funcionario {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
-	}
-	
-	
-	
-	public void consultaRegistro() {
-		
 	}
 	
 	

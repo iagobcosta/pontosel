@@ -1,4 +1,4 @@
-package br.com.controta;
+package br.com.pontosel;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
